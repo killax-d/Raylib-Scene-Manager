@@ -11,11 +11,11 @@
  
 #include "../scene.h"
 
-extern void Scene_MainMenuUpdate(float delta) {
+void Scene_MainMenuUpdate(float delta) {
 	
 }
 
-extern void Scene_MainMenuDraw() {
+void Scene_MainMenuDraw() {
 	DrawRectangle(200, 150, 400, 300, GREEN);
 }
 

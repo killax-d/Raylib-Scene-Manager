@@ -1,6 +1,7 @@
 #include <raylib.h>
 
 #include "Env/env.c"
+#include "Env/Logger/logger.c"
 #include "Scene/Manager/scenemanager.c"
 
 //------------------------------------------------------------------------------------
@@ -33,6 +34,7 @@ int main(void)
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, GAME_NAME);
     
+    SetTraceLogCallback(logger);
     InitGame(&camera, &sceneManager);
 
     SetTargetFPS(GAME_FPS);

@@ -12,6 +12,9 @@
 #ifndef SCENE_H_
 #define SCENE_H_
 
+#define SCENE_COUNT 1
+#define SCENE_MAIN_MENU 0
+
 #include <stdlib.h>
 #include <raylib.h>
 
@@ -23,7 +26,7 @@
  */
 typedef void (*updateSceneMethod)(float delta);
 // Declare all update functions
-void Scene_MainMenuUpdate(float delta);
+extern void Scene_MainMenuUpdate(float delta);
 
 
 /**
@@ -32,7 +35,7 @@ void Scene_MainMenuUpdate(float delta);
  */
 typedef void (*drawSceneMethod)();
 // Declare all draw functions
-void Scene_MainMenuDraw();
+extern void Scene_MainMenuDraw();
 
 
 

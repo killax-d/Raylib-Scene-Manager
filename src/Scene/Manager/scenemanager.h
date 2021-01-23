@@ -12,9 +12,6 @@
 #ifndef SCENE_MANAGER_H_
 #define SCENE_MANAGER_H_
 
-#define SCENE_COUNT 1
-#define SCENE_MAIN_MENU 0
-
 #include <stdlib.h>
 #include "../scene.h"
 

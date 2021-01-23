@@ -17,11 +17,9 @@ Scene * Scene_new() {
 }
 
 void Scene_updateScene(Scene * scene, float delta) {
-	//scene->update(delta);
-	Scene_MainMenuUpdate(delta);
+	scene->update(delta);
 }
 
 void Scene_drawScene(Scene * scene) {
-	//scene->draw();
-	Scene_MainMenuDraw();
+	scene->draw();
 }
