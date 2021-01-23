@@ -203,3 +203,4 @@ DerivedData/
 # Project specific
 release/
 build/
+.vs/
