@@ -48,4 +48,11 @@ void SceneManager_update(SceneManager * manager, float delta);
  */
 void SceneManager_draw(SceneManager * manager);
 
+/**
+ * Push a new Scene to display
+ * @param manager The SceneManager currently used in game
+ * @param sceneID The Scene to push
+ */
+ void SceneManager_push(SceneManager * manager, int sceneID);
+
 #endif

@@ -19,7 +19,8 @@ SceneManager * SceneManager_new() {
 
 void SceneManager_init(SceneManager * manager) {
 	manager->scenes[SCENE_MAIN_MENU] = Scene_MainMenuConstruct();
-	manager->currentScene = manager->scenes[SCENE_MAIN_MENU];
+
+	SceneManager_push(manager, SCENE_MAIN_MENU);
 }
 
 void SceneManager_update(SceneManager * manager, float delta) {
@@ -28,4 +29,8 @@ void SceneManager_update(SceneManager * manager, float delta) {
 
 void SceneManager_draw(SceneManager * manager) {
 	if (manager->currentScene) Scene_drawScene(manager->currentScene);
+}
+
+void SceneManager_push(SceneManager * manager, int sceneID) {
+	if (sceneID >= 0 && sceneID < SCENE_COUNT) manager->currentScene = manager->scenes[sceneID];
 }

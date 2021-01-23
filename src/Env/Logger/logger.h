@@ -1,3 +1,14 @@
+/**
+ * @file logger.c
+ *
+ * @author Killax-D | Dylan DONNE
+ *
+ * @brief Custom Raylib Logger
+ *
+ * This file contains all declarations and function regarding Logger
+ *
+ */
+ 
 #ifndef LOGGER_H
 #define LOGGER_H
 

@@ -1,3 +1,14 @@
+/**
+ * @file logger.h
+ *
+ * @author Killax-D | Dylan DONNE
+ *
+ * @brief Custom Raylib Logger
+ *
+ * This file contains all declarations and function regarding Logger
+ *
+ */
+
 #include "logger.h"
 
 // Custom logger
