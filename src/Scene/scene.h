@@ -65,6 +65,7 @@ Scene * Scene_new();
 
 /**
  * Return a pointer casted into Scene object
+ * @param scene_ptr A Scene pointer
  * @return A pointer to the Scene
  */
 Scene * Scene_get(void * scene_ptr);

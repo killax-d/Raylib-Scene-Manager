@@ -10,7 +10,6 @@
  */
  
 #include "scenemanager.h"
-#include "../../Env/Logger/logger.h"
 
 SceneManager * SceneManager_new() {
 	SceneManager * manager = malloc(sizeof(SceneManager));

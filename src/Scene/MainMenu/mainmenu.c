@@ -10,8 +10,6 @@
  */
  
 #include "mainmenu.h"
-#include "../scene.h"
-#include "../../Env/env.h"
 
 MainMenu * MainMenu_new() {
 	MainMenu * menu = malloc(sizeof(MainMenu));

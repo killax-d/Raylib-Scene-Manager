@@ -14,6 +14,7 @@
 
 #include <stdlib.h>
 #include "../scene.h"
+#include "../../Env/Logger/logger.h"
 
 /**
  * Struct to represent a SceneManager

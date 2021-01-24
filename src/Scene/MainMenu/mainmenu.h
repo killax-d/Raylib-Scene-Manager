@@ -9,6 +9,8 @@
  *
  */
 
+#include "../../Env/env.h"
+#include "../scene.h"
 
 /**
  * Struct to represent a Scene
@@ -25,6 +27,7 @@ MainMenu * MainMenu_new();
 
 /**
  * Return the pointer casted into MainMenu object
+ * @param scene A Scene object originally defined as MainMenu
  * @return A pointer to the MainMenu
  */
-MainMenu * MainMenu_get();
+MainMenu * MainMenu_get(Scene * scene);
