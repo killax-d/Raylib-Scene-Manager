@@ -7,19 +7,24 @@ OBJECTS = $(patsubst %.c, %.o, $(FILES))
 all: $(APP)
 
 # All the file (Folder recursive) are automatically added
-$(APP): $(OBJECTS)
+$(APP): directories $(OBJECTS)
+	$(CC) -o $(RELEASE_DIR)/$@ $(shell find ../build -type f -name '*.o' -printf "%p ") $(CLIBS)
+
+directories:
 	if [ ! -d "$(RELEASE_DIR)" ]; then mkdir "$(RELEASE_DIR)"; fi
-	$(CC) -o $(RELEASE_DIR)/$@ $^ $(CLIBS)
+	if [ ! -d "$(BUILD_DIR)" ]; then mkdir "$(BUILD_DIR)"; fi
 
 # This satisfy all the above targets, with a single regex (compile the .c to generate the .o compiled file)
-%.o: %/%.c
-	$(CC) -c $< $(CFLAGS)
+%.o: %.c
+	mkdir -p `dirname "$(BUILD_DIR)/$@"`
+	$(CC) -c $< -o "$(BUILD_DIR)/$@" $(CFLAGS)
+
 
 # Use "make clean" to remove all .o files in the current folder
 clean:
-	rm -rf $(OBJECTS)
+	rm -rf $(BUILD_DIR)
 
 # Use "make clean all" to remove all *.o files and the binary
 purge:
-	rm -rf $(OBJECTS)
-	rm -f ../$(APP)
+	rm -rf $(BUILD_DIR)
+	rm -rf $(RELEASE_DIR)
