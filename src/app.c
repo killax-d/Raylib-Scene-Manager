@@ -1,8 +1,8 @@
 #include <raylib.h>
 
-#include "Env/env.c"
-#include "Env/Logger/logger.c"
-#include "Scene/Manager/scenemanager.c"
+#include "Env/env.h"
+#include "Env/Logger/logger.h"
+#include "Scene/Manager/scenemanager.h"
 
 //------------------------------------------------------------------------------------
 // Module Functions Declaration (local)

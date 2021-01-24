@@ -16,10 +16,15 @@ Scene * Scene_new() {
 	return scene;
 }
 
+Scene * Scene_get(void * scene_ptr) {
+	Scene * scene = scene_ptr;
+	return scene;
+}
+
 void Scene_updateScene(Scene * scene, float delta) {
-	scene->update(delta);
+	scene->update(scene, delta);
 }
 
 void Scene_drawScene(Scene * scene) {
-	scene->draw();
+	scene->draw(scene);
 }
