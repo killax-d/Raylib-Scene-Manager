@@ -17,12 +17,12 @@ MainMenu * MainMenu_new() {
 	return menu;
 }
 
-void Scene_MainMenuUpdate(void * scene_ptr, float delta) {
+void Scene_MainMenuUpdate(void * object_ptr, float delta) {
 	
 }
 
-void Scene_MainMenuDraw(void * scene_ptr) {
-	MainMenu * menu = MainMenu_get(Scene_get(scene_ptr));
+void Scene_MainMenuDraw(void * object_ptr) {
+	MainMenu * menu = object_ptr;
 
 	int text_width = MeasureText(menu->text, 20);
 	
@@ -36,12 +36,7 @@ Scene * Scene_MainMenuConstruct() {
 
 	MainMenu * menu = MainMenu_new();
 
-	scene->object_pointer = menu;
+	scene->object_ptr = menu;
 
 	return scene;
-}
-
-MainMenu * MainMenu_get(Scene * scene) {
-	MainMenu * menu = scene->object_pointer;
-	return menu;
 }

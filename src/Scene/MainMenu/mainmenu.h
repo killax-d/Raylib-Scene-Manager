@@ -26,8 +26,13 @@ typedef struct MainMenu {
 MainMenu * MainMenu_new();
 
 /**
- * Return the pointer casted into MainMenu object
- * @param scene A Scene object originally defined as MainMenu
- * @return A pointer to the MainMenu
+ * Define an draw method, should be defined as "updateSceneMethod" from scene.h
+ * @param object_ptr The object_ptr contained in Scene Object
  */
-MainMenu * MainMenu_get(Scene * scene);
+void Scene_MainMenuUpdate(void * object_ptr, float delta);
+
+/**
+ * Define an draw method, should be defined as "drawSceneMethod" from scene.h
+ * @param object_ptr The object_ptr contained in Scene Object
+ */
+void Scene_MainMenuDraw(void * object_ptr);

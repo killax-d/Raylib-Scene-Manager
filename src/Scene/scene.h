@@ -21,22 +21,17 @@
 
 /**
  * Define an update method
- * @param scene The Scene to update
+ * @param object_ptr The object_ptr contained in Scene Object
  * @param delta The current deltaTime
  */
-typedef void (*updateSceneMethod)(void * scene_ptr, float delta);
-// Declare all update functions
-extern void Scene_MainMenuUpdate(void * scene_ptr, float delta);
+typedef void (*updateSceneMethod)(void * object_ptr, float delta);
 
 
 /**
  * Define an draw method
- * @param scene The Scene to draw
+ * @param object_ptr The object_ptr contained in Scene Object
  */
-typedef void (*drawSceneMethod)(void * scene_ptr);
-// Declare all draw functions
-extern void Scene_MainMenuDraw(void * scene_ptr);
-
+typedef void (*drawSceneMethod)(void * object_ptr);
 
 
 /**
@@ -45,7 +40,7 @@ extern void Scene_MainMenuDraw(void * scene_ptr);
 typedef struct Scene {
 	updateSceneMethod update;
 	drawSceneMethod draw;
-	void * object_pointer;
+	void * object_ptr;
 } Scene;
 
 
@@ -62,13 +57,6 @@ Scene * Scene_MainMenuConstruct();
  * @return A pointer to the Scene
  */
 Scene * Scene_new();
-
-/**
- * Return a pointer casted into Scene object
- * @param scene_ptr A Scene pointer
- * @return A pointer to the Scene
- */
-Scene * Scene_get(void * scene_ptr);
 
 /**
  * Update the current Scene active
