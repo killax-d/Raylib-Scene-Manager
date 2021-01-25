@@ -8,9 +8,13 @@
  * This file contains all declarations and function regarding MainMenu Scene
  *
  */
+ 
+#ifndef SCENE_MAIN_MENU_H_
+#define SCENE_MAIN_MENU_H_
 
 #include "../../Env/env.h"
 #include "../scene.h"
+#include "../Manager/scenemanager.h"
 
 /**
  * Struct to represent a Scene
@@ -29,10 +33,12 @@ MainMenu * MainMenu_new();
  * Define an draw method, should be defined as "updateSceneMethod" from scene.h
  * @param object_ptr The object_ptr contained in Scene Object
  */
-void Scene_MainMenuUpdate(void * object_ptr, float delta);
+void Scene_MainMenuUpdate(void * manager_ptr, void * object_ptr, float delta);
 
 /**
  * Define an draw method, should be defined as "drawSceneMethod" from scene.h
  * @param object_ptr The object_ptr contained in Scene Object
  */
-void Scene_MainMenuDraw(void * object_ptr);
+void Scene_MainMenuDraw(void * manager_ptr, void * object_ptr);
+
+#endif

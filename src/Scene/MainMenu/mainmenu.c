@@ -17,11 +17,11 @@ MainMenu * MainMenu_new() {
 	return menu;
 }
 
-void Scene_MainMenuUpdate(void * object_ptr, float delta) {
-	
+void Scene_MainMenuUpdate(void * manager_ptr, void * object_ptr, float delta) {
+	if(IsKeyDown(KEY_ENTER)) SceneManager_push(manager_ptr, SCENE_LOBBY);
 }
 
-void Scene_MainMenuDraw(void * object_ptr) {
+void Scene_MainMenuDraw(void * manager_ptr, void * object_ptr) {
 	MainMenu * menu = object_ptr;
 
 	int text_width = MeasureText(menu->text, 20);

@@ -16,10 +16,10 @@ Scene * Scene_new() {
 	return scene;
 }
 
-void Scene_updateScene(Scene * scene, float delta) {
-	scene->update(scene->object_ptr, delta);
+void Scene_updateScene(void * manager_ptr, Scene * scene, float delta) {
+	scene->update(manager_ptr, scene->object_ptr, delta);
 }
 
-void Scene_drawScene(Scene * scene) {
-	scene->draw(scene->object_ptr);
+void Scene_drawScene(void * manager_ptr, Scene * scene) {
+	scene->draw(manager_ptr, scene->object_ptr);
 }
